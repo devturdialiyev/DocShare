@@ -42,6 +42,7 @@ const bottomNavItems = [
 
 const Sidebar = ({ activeItem = "dashboard", onItemClick }: SidebarProps) => {
   const [isMobileOpen, setIsMobileOpen] = React.useState(false);
+  const pathname = usePathname();
 
   return (
     <>
@@ -92,8 +93,7 @@ const Sidebar = ({ activeItem = "dashboard", onItemClick }: SidebarProps) => {
         <nav className="flex-1 p-4 space-y-1">
           {navItems.map((item) => {
             const Icon = item.icon;
-            const pathname = usePathname();
-            const isActive = pathname === item.href;
+            const isActive = activeItem === item.id || pathname === item.href;
             return (
               <Link
                 key={item.id}

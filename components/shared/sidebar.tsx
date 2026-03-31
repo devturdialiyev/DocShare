@@ -29,10 +29,10 @@ interface SidebarProps {
 const navItems = [
   { id: "dashboard", label: "Dashboard", icon: Home, href: "/user/dashboard" },
   { id: "health", label: "My Health", icon: Heart, href: "/user/health" },
-  { id: "family", label: "My Family", icon: Users, href: "/user/dashboard" },
-  { id: "appointments", label: "Appointments", icon: Calendar, href: "/user/dashboard" },
-  { id: "activity", label: "Activity", icon: Activity, href: "/user/dashboard" },
-  { id: "documents", label: "Documents", icon: FileText, href: "/user/dashboard" },
+  { id: "family", label: "My Family", icon: Users, href: "/user/family" },
+  { id: "appointments", label: "Appointments", icon: Calendar, href: "/user/appointments" },
+  { id: "activity", label: "Activity", icon: Activity, href: "/user/activity" },
+  { id: "documents", label: "Documents", icon: FileText, href: "/user/documents" },
 ];
 
 const bottomNavItems = [

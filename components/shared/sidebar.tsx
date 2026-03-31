@@ -103,10 +103,10 @@ const Sidebar = ({ activeItem = "dashboard", onItemClick }: SidebarProps) => {
                   setIsMobileOpen(false);
                 }}
                 className={cn(
-                  "w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200",
+                  "w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 relative",
                   isActive
-                    ? "bg-white/20 text-white backdrop-blur-sm"
-                    : "text-white/80 hover:bg-white/10 hover:text-white"
+                    ? "bg-white/15 text-white backdrop-blur-sm shadow-md"
+                    : "text-white/70 hover:text-white"
                 )}
               >
                 <Icon className="w-5 h-5" />
@@ -114,7 +114,7 @@ const Sidebar = ({ activeItem = "dashboard", onItemClick }: SidebarProps) => {
                 {isActive && (
                   <motion.div
                     layoutId="activeNav"
-                    className="ml-auto w-1.5 h-1.5 rounded-full bg-white"
+                    className="ml-auto w-2 h-2 rounded-full bg-white shadow-sm"
                   />
                 )}
               </Link>
@@ -125,10 +125,7 @@ const Sidebar = ({ activeItem = "dashboard", onItemClick }: SidebarProps) => {
         {/* Doctor Link */}
         <div className="p-4">
           <button
-            className={cn(
-              "w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200",
-              "bg-white/5 text-white/80 hover:bg-white/10 hover:text-white border border-white/10"
-            )}
+            className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-white/70 hover:text-white transition-all duration-200"
           >
             <Stethoscope className="w-5 h-5" />
             <span className="font-medium">Doctor Mode</span>
@@ -137,7 +134,7 @@ const Sidebar = ({ activeItem = "dashboard", onItemClick }: SidebarProps) => {
 
         {/* User Profile */}
         <div className="p-4 border-t border-white/10">
-          <div className="flex items-center gap-3 p-3 rounded-xl bg-white/10">
+          <div className="flex items-center gap-3 p-3 rounded-xl bg-white/10 backdrop-blur-sm">
             <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
               <span className="text-white font-semibold">
                 {currentUser.full_name.charAt(0)}
@@ -158,7 +155,7 @@ const Sidebar = ({ activeItem = "dashboard", onItemClick }: SidebarProps) => {
               return (
                 <button
                   key={item.id}
-                  className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-white/70 hover:bg-white/10 hover:text-white transition-all duration-200"
+                  className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-white/70 hover:text-white transition-all duration-200"
                 >
                   <Icon className="w-5 h-5" />
                   <span className="font-medium">{item.label}</span>

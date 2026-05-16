@@ -12,8 +12,8 @@ import HealthGoals from "@/components/user/health/HealthGoals";
 import RiskAssessment from "@/components/user/health/RiskAssessment";
 import ExportReport from "@/components/user/health/ExportReport";
 import MedicalHistory from "@/components/user/health/MedicalHistory";
-import AIHealthSummary from "@/components/user/health/AIHealthSummary";
-import { Card, CardContent } from "@/components/ui/card";
+import HealthOverview from "@/components/user/health/HealthOverview";
+
 import {
   Heart,
   Activity,
@@ -45,16 +45,7 @@ export default function MyHealthPage() {
   const renderContent = () => {
     switch (activeTab) {
       case "overview":
-        return (
-          <div className="space-y-6">
-            <AIHealthSummary />
-            <div className="grid lg:grid-cols-2 gap-6">
-              <VitalsTracker compact />
-              <HealthGoals compact />
-            </div>
-            <RiskAssessment compact />
-          </div>
-        );
+        return <HealthOverview />;
       case "vitals":
         return (
           <div className="space-y-6">

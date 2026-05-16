@@ -20,6 +20,13 @@ export interface FamilyMember {
   relation: string;
   avatar?: string;
   health_status: "good" | "attention" | "critical";
+  date_of_birth?: string;
+  gender?: "male" | "female";
+  blood_type?: string;
+  allergies?: string[];
+  chronic_conditions?: string[];
+  last_checkup?: string;
+  health_score?: number;
 }
 
 export interface Vital {
@@ -131,18 +138,65 @@ export const familyMembers: FamilyMember[] = [
     name: "Malika Karimova",
     relation: "Wife",
     health_status: "good",
+    date_of_birth: "1995-03-15",
+    gender: "female",
+    blood_type: "A+",
+    allergies: [],
+    chronic_conditions: [],
+    last_checkup: "2026-02-10",
+    health_score: 92,
   },
   {
     id: "fam_002",
     name: "Bobur Karimov",
     relation: "Son",
     health_status: "attention",
+    date_of_birth: "2015-08-22",
+    gender: "male",
+    blood_type: "B+",
+    allergies: ["Dust", "Pollen"],
+    chronic_conditions: ["Mild asthma"],
+    last_checkup: "2026-01-20",
+    health_score: 78,
   },
   {
     id: "fam_003",
     name: "Nodira Karimova",
     relation: "Daughter",
     health_status: "good",
+    date_of_birth: "2018-11-05",
+    gender: "female",
+    blood_type: "O+",
+    allergies: [],
+    chronic_conditions: [],
+    last_checkup: "2026-03-01",
+    health_score: 95,
+  },
+  {
+    id: "fam_004",
+    name: "Dilshod Karimov",
+    relation: "Father",
+    health_status: "critical",
+    date_of_birth: "1960-12-10",
+    gender: "male",
+    blood_type: "AB+",
+    allergies: ["Penicillin"],
+    chronic_conditions: ["Hypertension", "Type 2 Diabetes"],
+    last_checkup: "2026-03-15",
+    health_score: 45,
+  },
+  {
+    id: "fam_005",
+    name: "莲 Simple",
+    relation: "Mother",
+    health_status: "attention",
+    date_of_birth: "1965-06-28",
+    gender: "female",
+    blood_type: "A-",
+    allergies: [],
+    chronic_conditions: ["Hypothyroidism"],
+    last_checkup: "2026-02-28",
+    health_score: 72,
   },
 ];
 

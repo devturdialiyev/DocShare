@@ -25,22 +25,22 @@ import {
 } from "lucide-react";
 
 function IconBox({
-  gradient,
   children,
   size = "md",
+  className,
 }: {
-  gradient: string;
   children: React.ReactNode;
   size?: "sm" | "md";
+  className?: string;
 }) {
   const s = size === "sm" ? "w-8 h-8" : "w-[42px] h-[42px]";
   return (
     <div
       className={cn(
         s,
-        "rounded-xl flex items-center justify-center text-white flex-shrink-0"
+        "rounded-xl flex items-center justify-center flex-shrink-0",
+        className
       )}
-      style={{ background: gradient }}
     >
       {children}
     </div>
@@ -61,11 +61,11 @@ function Badge({
   variant?: "red" | "yellow" | "green" | "purple" | "blue";
 }) {
   const colors: Record<string, string> = {
-    red: "bg-[#ff6900] text-white",
-    yellow: "bg-[#f0b100] text-white",
-    green: "bg-[#00c950] text-white",
-    purple: "bg-[#8200db] text-white",
-    blue: "bg-[#1447e6] text-white",
+    red: "bg-red-100 text-red-700",
+    yellow: "bg-amber-100 text-amber-700",
+    green: "bg-green-100 text-green-700",
+    purple: "bg-purple-100 text-purple-700",
+    blue: "bg-blue-100 text-blue-700",
   };
   return (
     <span
@@ -134,27 +134,24 @@ export default function HealthOverview() {
           {/* Overall Health */}
           <motion.div
             variants={staggerItem}
-            className="rounded-3xl flex flex-col items-center justify-center text-center p-5 text-white"
-            style={{
-              background: "linear-gradient(135deg, #00c950, #009966)",
-            }}
+            className="rounded-3xl flex flex-col items-center justify-center text-center p-5 bg-green-50"
           >
             <div className="flex items-center gap-2.5 w-full mb-4">
-              <div className="w-[42px] h-[42px] rounded-xl bg-white/20 border-2 border-white/30 flex items-center justify-center text-lg flex-shrink-0">
-                <Heart className="w-5 h-5" />
+              <div className="w-[42px] h-[42px] rounded-xl bg-green-100 border-2 border-green-200 flex items-center justify-center text-lg flex-shrink-0">
+                <Heart className="w-5 h-5 text-green-600" />
               </div>
               <div className="text-left">
-                <div className="text-sm font-bold">Overall Health</div>
-                <div className="text-[11px] font-semibold opacity-80">
+                <div className="text-sm font-bold text-gray-900">Overall Health</div>
+                <div className="text-[11px] font-semibold text-gray-500">
                   Score
                 </div>
               </div>
             </div>
-            <div className="text-[52px] font-bold leading-none">8.5</div>
-            <div className="text-xs font-semibold opacity-80 mt-2">
+            <div className="text-[52px] font-bold leading-none text-green-700">8.5</div>
+            <div className="text-xs font-semibold text-gray-500 mt-2">
               10 point scale
             </div>
-            <div className="text-xs font-semibold opacity-90 mt-2">
+            <div className="text-xs font-semibold text-gray-600 mt-2">
               Healthy lifestyle and good activity level
             </div>
           </motion.div>
@@ -162,8 +159,8 @@ export default function HealthOverview() {
           {/* Risk Factors */}
           <motion.div variants={staggerItem} className="card p-5">
             <div className="flex items-center gap-2.5 mb-4">
-              <IconBox gradient="linear-gradient(135deg, #ff6900, #fb2c36)">
-                <Flame className="w-5 h-5" />
+              <IconBox className="bg-orange-50">
+                <Flame className="w-5 h-5 text-orange-600" />
               </IconBox>
               <div>
                 <div className="text-sm font-bold text-gray-900">
@@ -187,8 +184,8 @@ export default function HealthOverview() {
           {/* Active Conditions */}
           <motion.div variants={staggerItem} className="card p-5">
             <div className="flex items-center gap-2.5 mb-4">
-              <IconBox gradient="linear-gradient(135deg, #2975d4, #05b2d9)">
-                <Stethoscope className="w-5 h-5" />
+              <IconBox className="bg-blue-50">
+                <Stethoscope className="w-5 h-5 text-blue-600" />
               </IconBox>
               <div>
                 <div className="text-sm font-bold text-gray-900">
@@ -229,8 +226,8 @@ export default function HealthOverview() {
             >
               <div className="flex items-start justify-between mb-3">
                 <div className="flex items-center gap-3">
-                  <IconBox gradient="linear-gradient(135deg, #fb2c36, #ff6900)">
-                    <Wind className="w-5 h-5" />
+                  <IconBox className="bg-red-50">
+                    <Wind className="w-5 h-5 text-red-600" />
                   </IconBox>
                   <div>
                     <div className="text-sm font-bold text-gray-900">
@@ -296,8 +293,8 @@ export default function HealthOverview() {
             >
               <div className="flex items-start justify-between mb-3">
                 <div className="flex items-center gap-3">
-                  <IconBox gradient="linear-gradient(135deg, #ad46ff, #f6339a)">
-                    <Sparkles className="w-5 h-5" />
+                  <IconBox className="bg-purple-50">
+                    <Sparkles className="w-5 h-5 text-purple-600" />
                   </IconBox>
                   <div>
                     <div className="text-sm font-bold text-gray-900">
@@ -358,8 +355,8 @@ export default function HealthOverview() {
             >
               <div className="flex items-start justify-between mb-3">
                 <div className="flex items-center gap-3">
-                  <IconBox gradient="linear-gradient(135deg, #f0b100, #fe9a00)">
-                    <Footprints className="w-5 h-5" />
+                  <IconBox className="bg-amber-50">
+                    <Footprints className="w-5 h-5 text-amber-600" />
                   </IconBox>
                   <div>
                     <div className="text-sm font-bold text-gray-900">
@@ -427,11 +424,8 @@ export default function HealthOverview() {
                 borderColor: "rgba(254,230,133,0.5)",
               }}
             >
-              <IconBox
-                gradient="linear-gradient(135deg, #fe9a00, #f0b100)"
-                size="md"
-              >
-                <Pill className="w-5 h-5" />
+              <IconBox className="bg-amber-50" size="md">
+                <Pill className="w-5 h-5 text-amber-600" />
               </IconBox>
               <div className="flex-1">
                 <div className="flex justify-between items-start mb-2.5">
@@ -482,8 +476,8 @@ export default function HealthOverview() {
                 borderColor: "rgba(190,219,255,0.5)",
               }}
             >
-              <IconBox gradient="linear-gradient(135deg, #2975d4, #05b2d9)">
-                <Pill className="w-5 h-5" />
+              <IconBox className="bg-blue-50">
+                <Pill className="w-5 h-5 text-blue-600" />
               </IconBox>
               <div className="flex-1">
                 <div className="flex justify-between items-start mb-2.5">
@@ -534,8 +528,8 @@ export default function HealthOverview() {
                 borderColor: "rgba(233,212,255,0.5)",
               }}
             >
-              <IconBox gradient="linear-gradient(135deg, #ad46ff, #f6339a)">
-                <Pill className="w-5 h-5" />
+              <IconBox className="bg-purple-50">
+                <Pill className="w-5 h-5 text-purple-600" />
               </IconBox>
               <div className="flex-1">
                 <div className="flex justify-between items-start mb-2.5">
@@ -585,8 +579,8 @@ export default function HealthOverview() {
           {/* Activity Impact */}
           <Card className="p-5">
             <div className="flex items-center gap-2.5 mb-4">
-              <IconBox gradient="linear-gradient(135deg, #00c950, #009966)">
-                <Activity className="w-5 h-5" />
+              <IconBox className="bg-green-50">
+                <Activity className="w-5 h-5 text-green-600" />
               </IconBox>
               <div>
                 <div className="text-sm font-bold text-gray-900">
@@ -651,8 +645,8 @@ export default function HealthOverview() {
           {/* Vital Signs */}
           <Card className="p-5">
             <div className="flex items-center gap-2.5 mb-4">
-              <IconBox gradient="linear-gradient(135deg, #fb2c36, #f6339a)">
-                <Activity className="w-5 h-5" />
+              <IconBox className="bg-rose-50">
+                <Activity className="w-5 h-5 text-rose-600" />
               </IconBox>
               <div>
                 <div className="text-sm font-bold text-gray-900">
@@ -696,8 +690,8 @@ export default function HealthOverview() {
           {/* Upcoming Checkups */}
           <Card className="p-5">
             <div className="flex items-center gap-2.5 mb-4">
-              <IconBox gradient="linear-gradient(135deg, #2975d4, #05b2d9)">
-                <Calendar className="w-5 h-5" />
+              <IconBox className="bg-blue-50">
+                <Calendar className="w-5 h-5 text-blue-600" />
               </IconBox>
               <div>
                 <div className="text-sm font-bold text-gray-900">
@@ -751,55 +745,52 @@ export default function HealthOverview() {
       {/* ── Recommendations Banner ── */}
       <motion.div
         variants={staggerItem}
-        className="rounded-3xl p-[26px]"
-        style={{
-          background: "linear-gradient(161deg, #2975d4, #05b2d9)",
-        }}
+        className="rounded-3xl p-[26px] bg-blue-50"
       >
-        <h2 className="text-lg font-bold text-white mb-[18px]">
+        <h2 className="text-lg font-bold text-gray-900 mb-[18px]">
           Personal Health Recommendations
         </h2>
         <div className="grid grid-cols-3 gap-3.5">
-          <div className="bg-white/10 border border-white/20 rounded-xl p-4">
+          <div className="bg-white border border-gray-200 rounded-xl p-4">
             <div className="flex items-center gap-2.5 mb-2">
-              <div className="w-[34px] h-[34px] bg-white/20 rounded-xl flex items-center justify-center text-base">
-                <Wind className="w-4 h-4 text-white" />
+              <div className="w-[34px] h-[34px] bg-blue-100 rounded-xl flex items-center justify-center text-base">
+                <Wind className="w-4 h-4 text-blue-600" />
               </div>
-              <div className="text-sm font-bold text-white">Air Quality</div>
+              <div className="text-sm font-bold text-gray-900">Air Quality</div>
             </div>
-            <div className="text-xs font-semibold text-white/90 leading-relaxed mb-2.5">
+            <div className="text-xs font-semibold text-gray-600 leading-relaxed mb-2.5">
               History of respiratory infection. Today&apos;s AQI is 67 &mdash;
               wear a mask and close windows.
             </div>
             <Badge variant="red">Important</Badge>
           </div>
 
-          <div className="bg-white/10 border border-white/20 rounded-xl p-4">
+          <div className="bg-white border border-gray-200 rounded-xl p-4">
             <div className="flex items-center gap-2.5 mb-2">
-              <div className="w-[34px] h-[34px] bg-white/20 rounded-xl flex items-center justify-center text-base">
-                <Activity className="w-4 h-4 text-white" />
+              <div className="w-[34px] h-[34px] bg-blue-100 rounded-xl flex items-center justify-center text-base">
+                <Activity className="w-4 h-4 text-blue-600" />
               </div>
-              <div className="text-sm font-bold text-white">
+              <div className="text-sm font-bold text-gray-900">
                 Continue Activity
               </div>
             </div>
-            <div className="text-xs font-semibold text-white/90 leading-relaxed mb-2.5">
+            <div className="text-xs font-semibold text-gray-600 leading-relaxed mb-2.5">
               8,421 steps &mdash; great! Sports injury fully recovered.
               Don&apos;t forget stretching exercises.
             </div>
             <Badge variant="green">Good</Badge>
           </div>
 
-          <div className="bg-white/10 border border-white/20 rounded-xl p-4">
+          <div className="bg-white border border-gray-200 rounded-xl p-4">
             <div className="flex items-center gap-2.5 mb-2">
-              <div className="w-[34px] h-[34px] bg-white/20 rounded-xl flex items-center justify-center text-base">
-                <Moon className="w-4 h-4 text-white" />
+              <div className="w-[34px] h-[34px] bg-blue-100 rounded-xl flex items-center justify-center text-base">
+                <Moon className="w-4 h-4 text-blue-600" />
               </div>
-              <div className="text-sm font-bold text-white">
+              <div className="text-sm font-bold text-gray-900">
                 Improve Sleep
               </div>
             </div>
-            <div className="text-xs font-semibold text-white/90 leading-relaxed mb-2.5">
+            <div className="text-xs font-semibold text-gray-600 leading-relaxed mb-2.5">
               7.5 hours is good, but aim for 8 hours. Avoid screens before
               bedtime.
             </div>

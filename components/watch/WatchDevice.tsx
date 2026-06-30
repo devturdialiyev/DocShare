@@ -9,9 +9,6 @@ interface WatchDeviceProps {
   onSwipeDown: () => void;
 }
 
-const CIRCLE_R = 240;
-const CIRCLE_D = 480;
-
 export default function WatchDevice({
   children,
   onSwipeLeft,
@@ -45,34 +42,13 @@ export default function WatchDevice({
       <div className="relative">
         <div className="w-[520px] h-[520px] rounded-full bg-gray-800 shadow-2xl border-[12px] border-gray-700 flex items-center justify-center">
           <div
-            className="relative"
-            style={{ width: CIRCLE_D, height: CIRCLE_D }}
+            className="w-[480px] h-[480px] rounded-full overflow-hidden relative box-border"
+            style={{ boxShadow: "inset 0 0 0 2px rgba(0,0,0,0.04)" }}
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
           >
-            <svg
-              className="absolute inset-0 w-full h-full pointer-events-none"
-              viewBox={`0 0 ${CIRCLE_D} ${CIRCLE_D}`}
-            >
-              <defs>
-                <clipPath id="watchClip">
-                  <circle cx={CIRCLE_R} cy={CIRCLE_R} r={CIRCLE_R - 2} />
-                </clipPath>
-              </defs>
-              <rect width={CIRCLE_D} height={CIRCLE_D} fill="#FFFFFF" clipPath="url(#watchClip)" />
-              <circle
-                cx={CIRCLE_R} cy={CIRCLE_R} r={CIRCLE_R - 3}
-                fill="none" stroke="rgba(0,0,0,0.04)" strokeWidth="2"
-              />
-            </svg>
-
-            <div
-              className="absolute inset-0 overflow-hidden"
-              style={{ clipPath: "url(#watchClip)" }}
-            >
-              <div className="w-full h-full px-[36px] pt-[40px] pb-[24px] overflow-hidden">
-                {children}
-              </div>
+            <div className="w-full h-full px-[12px] pt-[16px] pb-[8px] overflow-hidden">
+              {children}
             </div>
           </div>
         </div>

@@ -221,11 +221,7 @@ export default function HealthOverview() {
 
             {/* Respiratory */}
             <div
-              className="rounded-xl p-[18px] mb-[14px] border"
-              style={{
-                background: "linear-gradient(153deg, #fef2f2, #fff7ed)",
-                borderColor: "rgba(255,201,201,0.5)",
-              }}
+              className="rounded-xl p-[18px] mb-[14px] border bg-rose-50 border-rose-200"
             >
               <div className="flex items-start justify-between mb-3">
                 <div className="flex items-center gap-3">
@@ -270,8 +266,7 @@ export default function HealthOverview() {
                 </div>
               </div>
               <div
-                className="bg-white/80 rounded-xl p-3 pl-4 border-l-4 text-xs"
-                style={{ borderColor: "#ff6900" }}
+                className="bg-white/80 rounded-xl p-3 pl-4 border-l-4 border-rose-200 text-xs"
               >
                 <div className="font-bold text-gray-900 mb-0.5 text-sm">
                   <Zap className="w-3.5 h-3.5 inline mr-1" />
@@ -288,11 +283,7 @@ export default function HealthOverview() {
 
             {/* Seasonal Allergy */}
             <div
-              className="rounded-xl p-[18px] mb-[14px] border"
-              style={{
-                background: "linear-gradient(153deg, #faf5ff, #fdf2f8)",
-                borderColor: "rgba(233,212,255,0.5)",
-              }}
+              className="rounded-xl p-[18px] mb-[14px] border bg-purple-50 border-purple-200"
             >
               <div className="flex items-start justify-between mb-3">
                 <div className="flex items-center gap-3">
@@ -333,8 +324,7 @@ export default function HealthOverview() {
                 </div>
               </div>
               <div
-                className="bg-white/80 rounded-xl p-3 pl-4 border-l-4 text-xs"
-                style={{ borderColor: "#ad46ff" }}
+                className="bg-white/80 rounded-xl p-3 pl-4 border-l-4 border-purple-200 text-xs"
               >
                 <div className="font-bold text-gray-900 mb-0.5 text-sm">
                   <Link2 className="w-3.5 h-3.5 inline mr-1" />
@@ -350,11 +340,7 @@ export default function HealthOverview() {
 
             {/* Ankle Sprain */}
             <div
-              className="rounded-xl p-[18px] border"
-              style={{
-                background: "linear-gradient(153deg, #fefce8, #fffbeb)",
-                borderColor: "rgba(255,240,133,0.5)",
-              }}
+              className="rounded-xl p-[18px] border bg-orange-50 border-orange-200"
             >
               <div className="flex items-start justify-between mb-3">
                 <div className="flex items-center gap-3">
@@ -399,8 +385,7 @@ export default function HealthOverview() {
                 </div>
               </div>
               <div
-                className="bg-white/80 rounded-xl p-3 pl-4 border-l-4 text-xs"
-                style={{ borderColor: "#f0b100" }}
+                className="bg-white/80 rounded-xl p-3 pl-4 border-l-4 border-orange-200 text-xs"
               >
                 <div className="font-bold text-gray-900 mb-0.5 text-sm">
                   <CheckCircle className="w-3.5 h-3.5 inline mr-1" />
@@ -421,11 +406,7 @@ export default function HealthOverview() {
 
             {/* Vitamin D3 */}
             <div
-              className="rounded-xl p-[14px] mb-3 flex items-start gap-[14px] border"
-              style={{
-                background: "linear-gradient(165deg, #fffbeb, #fefce8)",
-                borderColor: "rgba(254,230,133,0.5)",
-              }}
+              className="rounded-xl p-[14px] mb-3 flex items-start gap-[14px] border bg-orange-50 border-orange-200"
             >
               <IconBox
                 gradient="linear-gradient(135deg, #fe9a00, #f0b100)"
@@ -476,11 +457,7 @@ export default function HealthOverview() {
 
             {/* Multivitamin */}
             <div
-              className="rounded-xl p-[14px] mb-3 flex items-start gap-[14px] border"
-              style={{
-                background: "linear-gradient(165deg, #eff6ff, #ecfeff)",
-                borderColor: "rgba(190,219,255,0.5)",
-              }}
+              className="rounded-xl p-[14px] mb-3 flex items-start gap-[14px] border bg-blue-50 border-blue-200"
             >
               <IconBox gradient="linear-gradient(135deg, #2975d4, #05b2d9)">
                 <Pill className="w-5 h-5" />
@@ -528,11 +505,7 @@ export default function HealthOverview() {
 
             {/* Antihistamine */}
             <div
-              className="rounded-xl p-[14px] flex items-start gap-[14px] border"
-              style={{
-                background: "linear-gradient(165deg, #faf5ff, #fdf2f8)",
-                borderColor: "rgba(233,212,255,0.5)",
-              }}
+              className="rounded-xl p-[14px] flex items-start gap-[14px] border bg-purple-50 border-purple-200"
             >
               <IconBox gradient="linear-gradient(135deg, #ad46ff, #f6339a)">
                 <Pill className="w-5 h-5" />
@@ -598,7 +571,7 @@ export default function HealthOverview() {
               </div>
             </div>
 
-            <div className="bg-[#f0fdf4] rounded-xl p-[14px] mb-3">
+            <div className="bg-green-50 rounded-xl p-[14px] mb-3">
               <div className="flex items-center gap-1.5 mb-1.5">
                 <Heart className="w-3.5 h-3.5 text-red-500" />
                 <span className="text-sm font-bold text-gray-900">
@@ -631,7 +604,7 @@ export default function HealthOverview() {
               <ProgressBar value={78} />
             </div>
 
-            <div className="bg-[#faf5ff] rounded-xl p-[14px]">
+            <div className="bg-purple-50 rounded-xl p-[14px]">
               <div className="flex items-center gap-1.5 mb-1.5">
                 <Moon className="w-3.5 h-3.5 text-purple-500" />
                 <span className="text-sm font-bold text-gray-900">
@@ -687,7 +660,7 @@ export default function HealthOverview() {
               </div>
               <div className="font-bold text-gray-900">16/min</div>
             </div>
-            <div className="bg-green-50 border border-[#b9f8cf] rounded-xl py-2 px-3 text-center text-xs font-bold text-green-700">
+            <div className="bg-green-50 border border-green-200 rounded-xl py-2 px-3 text-center text-xs font-bold text-green-700">
               <CheckCircle className="w-3.5 h-3.5 inline mr-1" />
               All indicators within normal range
             </div>
@@ -709,7 +682,7 @@ export default function HealthOverview() {
               </div>
             </div>
 
-            <div className="border-l-4 border-[#2975d4] bg-blue-50 rounded-xl p-3 pl-4 mb-2.5">
+            <div className="border-l-4 border-blue-200 bg-blue-50 rounded-xl p-3 pl-4 mb-2.5">
               <div className="flex justify-between items-center mb-0.5">
                 <span className="text-sm font-bold text-gray-900">
                   General checkup
@@ -721,7 +694,7 @@ export default function HealthOverview() {
               </div>
             </div>
 
-            <div className="border-l-4 border-[#ad46ff] bg-[#faf5ff] rounded-xl p-3 pl-4 mb-2.5">
+            <div className="border-l-4 border-purple-200 bg-purple-50 rounded-xl p-3 pl-4 mb-2.5">
               <div className="flex justify-between items-center mb-0.5">
                 <span className="text-sm font-bold text-gray-900">
                   Visit allergist
@@ -733,7 +706,7 @@ export default function HealthOverview() {
               </div>
             </div>
 
-            <div className="border-l-4 border-[#00c950] bg-green-50 rounded-xl p-3 pl-4">
+            <div className="border-l-4 border-green-200 bg-green-50 rounded-xl p-3 pl-4">
               <div className="flex justify-between items-center mb-0.5">
                 <span className="text-sm font-bold text-gray-900">
                   Eye checkup

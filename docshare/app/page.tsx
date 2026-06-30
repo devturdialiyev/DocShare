@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Shield, Users, Stethoscope, Crown, ChevronRight } from "lucide-react";
+import { Shield, Users, Stethoscope, Crown, Watch, ChevronRight } from "lucide-react";
 import "./globals.css";
 
 const roles = [
@@ -34,6 +34,13 @@ const roles = [
     icon: Crown,
     href: "/admin/national",
     color: "from-gray-800 to-gray-900",
+  },
+  {
+    name: "Watch",
+    description: "Connected wearable device and health sync dashboard",
+    icon: Watch,
+    href: "/user/watch",
+    color: "from-purple-500 to-pink-500",
   },
 ];
 
